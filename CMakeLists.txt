@@ -16,7 +16,7 @@ add_library(
     src/AMQPQueue.cpp
     include/AMQPcpp.h
 )
-target_include_directories(amqpcpp PUBLIC include/)
+target_include_directories(amqpcpp PUBLIC include/ rabbitmq-c/librabbitmq/)
 
 add_library(
     amqpcpp-static
@@ -29,7 +29,7 @@ add_library(
     src/AMQPQueue.cpp
     include/AMQPcpp.h
 )
-target_include_directories(amqpcpp-static PUBLIC include/)
+target_include_directories(amqpcpp-static PUBLIC include/ rabbitmq-c/librabbitmq/)
 
 add_subdirectory(rabbitmq-c)
 target_include_directories(rabbitmq PRIVATE rabbitmq-c/librabbitmq/)
